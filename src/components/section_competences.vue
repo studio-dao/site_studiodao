@@ -1,4 +1,5 @@
 <template>
+<section>
   <div class="section_competences" id="section_competences">
     <div class="box_fields" >
       
@@ -16,17 +17,31 @@
       <div class="barre_bleu_verticale"></div>
     </div>
   </div>
+  <!-- section sliders -->
+    <section_portfolio_webdesign />
+    <section_portfolio_graphisme />
+    <section_portfolio_artistic_direction/>
+</section>
 </template>
 
 <!-- SCRIPT -->
 <script>
 import { mapState } from "vuex";
+import section_portfolio_webdesign from "@/components/section_portfolio_webdesign.vue";
+import section_portfolio_graphisme from "@/components/section_portfolio_graphisme.vue";
+import section_portfolio_artistic_direction from "@/components/section_portfolio_artistic_direction.vue";
 
 export default {
   name: "section_competences",
   computed: {
     ...mapState(["fields"]),
   },
+  components:{
+    section_portfolio_graphisme,
+    section_portfolio_webdesign,
+    section_portfolio_artistic_direction
+  }
+
 };
 </script>
 

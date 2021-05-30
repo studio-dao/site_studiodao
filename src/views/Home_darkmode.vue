@@ -4,8 +4,6 @@
     <header_app />
     <section_intro />
     <section_competences />
-    <section_portfolio_graphisme />
-    <section_portfolio_webdesign />
     <section_CV />
     <section_contact />
     <footer_app />
@@ -17,8 +15,6 @@
 import header_app from "@/components/header.vue";
 import section_intro from "@/components/section_intro.vue";
 import section_competences from "@/components/section_competences.vue";
-import section_portfolio_webdesign from "@/components/section_portfolio_webdesign.vue";
-import section_portfolio_graphisme from "@/components/section_portfolio_graphisme.vue";
 import section_CV from "@/components/section_CV.vue";
 import section_contact from "@/components/section_contact.vue";
 import footer_app from "@/components/footer.vue";
@@ -30,8 +26,6 @@ export default {
     header_app,
     section_intro,
     section_competences,
-    section_portfolio_graphisme,
-    section_portfolio_webdesign,
     section_CV,
     section_contact,
     footer_app,

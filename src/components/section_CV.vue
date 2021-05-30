@@ -21,7 +21,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-    align-items: center;
+  align-items: center;
   background: linear-gradient(
     180deg,
     rgba(21, 21, 21, 1) 0%,
@@ -32,7 +32,7 @@ export default {
   margin: 0px;
   padding: 10px;
   text-align: center;
-   font-family: "Roboto condensed";
+  font-family: "Roboto condensed";
   color: white;
   font-size: 30px;
 }

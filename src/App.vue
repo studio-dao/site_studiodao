@@ -15,4 +15,5 @@ export default {
 
 <!-- STYLE -->
 <style>
+@import url('https://use.fontawesome.com/releases/v5.13.0/css/all.css');
 </style>

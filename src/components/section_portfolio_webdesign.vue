@@ -1,15 +1,16 @@
 <template>
-<section>
-  <div class="section_portfolio_web">
+<section class="main_section">
+  <div class="section_portfolio">
       <div class="slider_web" >
-      <div class="contenant_image_slide"></div>
       <img class="slide_image" :src="currentImg.image" alt="image" />
       <div class="description_slider_web">
         <p class="description_image_slide">{{ currentImg.description }}</p>
         <a :href="currentImg.buttonLink"><button class="bouton_bleu">Voir le site</button></a>
       </div>
-      <button class="prev" @click="prev" href="#">&#10094;</button>
-      <button class="next" @click="next" href="#">&#10095;</button>
+      <div class="div_fleches">
+      <i class=" fleche_gauche fas fa-caret-left"  @click="prev" ></i>
+      <i class=" fleche_droite fas fa-caret-right" @click="next"></i>
+      </div>
     </div>
   </div>
 </section>
@@ -32,7 +33,6 @@ export default {
   data() {
     return {
       index_slide: 0,
-      sliderTab: [],
     };
   },
 
@@ -49,15 +49,42 @@ export default {
 
 <!-- STYLE -->
 <style>
-.section_portfolio_webdesign {
+.main_section{
+  left: 0px;
+  right: 0px;
+  border-top: 2px solid rgb(11,202,203);
+}
+.section_portfolio{
+  position: relative;
   left: 0px;
   right: 0px;
 }
+.div_fleches{
+  position: absolute;;
+  padding: 10px;
+  top: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+.fleche_droite{
+  font-size: 30px;
+  color: white
+}
+
+.fleche_gauche{
+  font-size: 30px;
+  color: white
+}
+
 .slider {
   display: flex;
   flex-direction: column;
 }
 .slider_web {
+  margin-bottom: 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
