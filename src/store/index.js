@@ -11,7 +11,7 @@ export default new Vuex.Store({
     fields: [
       {
           image_field: require('@/assets/images/images_logos_sections/logo_webdesign.png'),
-          title: 'Web design (Ux Ui) & Integration',
+          title: 'Web design (Ux Ui) \r& Intégration',
           description: 'blablabla'
       },
       {
@@ -267,7 +267,7 @@ export default new Vuex.Store({
   
     {
       categorie: 'Mode',
-      image:require('@/assets/images/images_graphic_design/gd_mode/mode_californie.jpg'),
+      image:require('@/assets/images/images_graphic_design/gd_mode/mode_hindou.jpg'),
       description:'Visuel réalisé pour la collection hiver homme, de la marque Bonobo',
     },
     {

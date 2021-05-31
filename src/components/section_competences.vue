@@ -1,27 +1,68 @@
 <template>
-<section>
-  <div class="section_competences" id="section_competences">
-    <div class="box_fields" >
-      
-      <!-- boucle card -->
-      <div class="list_fields" v-for="field of fields" :key="field.id" >
-        <img class="image_fields" :src="field.image_field" alt="" />
-        <p class="field_nom">{{ field.title }}</p>
+  <section>
+    <div class="section_competences" id="section_competences">
+      <div class="box_fields">
+       
+
+          <div class="list_fields" @click="toggleSectionWebdesign(); myFilterWeb()">
+            <div class="cerclebleu" v-bind:class="{ cercleBorderWeb : isActive }">
+              <img class="image_fields" :src="fields[0].image_field" alt="field"/>
+              <p class="field_nom">{{ fields[0].title }}</p>
+            </div>
+        </div>
+
+        
+          <div class="list_fields" @click="toggleSectionGraphdesign();myFilterGraph() ">
+            <div class="cerclebleu" v-bind:class="{ cercleBorderGraph : isActiveG }">
+              <img class="image_fields" :src="fields[1].image_field" alt="field"/>
+              <p class="field_nom">{{ fields[1].title }}</p>
+            </div>
+          </div>
+
+        
+          <div class="list_fields" @click="toggleSectionArtDir();myFilterArt() ">
+            <div class="cerclebleu" v-bind:class="{ cercleBorderArt : isActiveA }">
+              <img class="image_fields" :src="fields[2].image_field" alt="field" />
+              <p class="field_nom">{{ fields[2].title }}</p>
+            </div>
+          </div>
+
       </div>
-    </div>
-    <div class="field_block_right">
-      <div class="field_description_box">
-        <h1 class=".field_nom_right">{{ fields.title }}</h1>
-        <p class="field_description">{{ fields.description }}</p>
+   <!-- Box droite -->
+      <div class="field_block_right" v-if="showSectionWeb" :showSectionWeb="showSectionWeb">
+        <div class="field_description_box">
+          <h1 class="field_nom_right">{{ fields[0].title }}</h1>
+          <p class="field_description">{{ fields[0].description }}</p>
+        </div>
       </div>
+
+      <div class="field_block_right" v-if="showSectionGraph" :showSectionGraph="showSectionGraph">
+        <div class="field_description_box">
+          <h1 class="field_nom_right">{{ fields[1].title }}</h1>
+          <p class="field_description">{{ fields[1].description }}</p>
+        </div>
+      </div>
+
+      <div class="field_block_right" v-if="showSectionAD" :showSectionAD="showSectionAD">
+        <div class="field_description_box">
+          <h1 class="field_nom_right">{{ fields[2].title }}</h1>
+          <p class="field_description">{{ fields[2].description }}</p>
+        </div>
+      </div>
+
       <div class="barre_bleu_verticale"></div>
     </div>
-  </div>
-  <!-- section sliders -->
-    <section_portfolio_webdesign />
-    <section_portfolio_graphisme />
-    <section_portfolio_artistic_direction/>
-</section>
+    <!-- section sliders -->
+    <div v-if="showSectionWeb" :showSectionWeb="showSectionWeb">
+      <section_portfolio_webdesign class="port_webdesign" />
+    </div>
+    <div v-if="showSectionGraph" :showSectionGraph="showSectionGraph">
+      <section_portfolio_graphisme class="port_graphisme" />
+    </div>
+    <div v-if="showSectionAD" :showSectionAD="showSectionAD">
+      <section_portfolio_artistic_direction class="port_artDir" />
+    </div>
+  </section>
 </template>
 
 <!-- SCRIPT -->
@@ -33,38 +74,97 @@ import section_portfolio_artistic_direction from "@/components/section_portfolio
 
 export default {
   name: "section_competences",
+  data() {
+    return {
+      showSectionWeb: false,
+      showSectionGraph: false,
+      showSectionAD: false,
+      isActive: false,
+      isActiveG: false,
+      isActiveA: false
+    };
+  },
   computed: {
     ...mapState(["fields"]),
   },
-  components:{
+
+  components: {
     section_portfolio_graphisme,
     section_portfolio_webdesign,
-    section_portfolio_artistic_direction
-  }
+    section_portfolio_artistic_direction,
+  },
 
+  methods: {
+    toggleSectionWebdesign() {
+      this.showSectionGraph = false;
+      this.showSectionAD = false;
+      this.showSectionWeb = !this.showSectionWeb;
+    },
+    toggleSectionGraphdesign() {
+      this.showSectionWeb = false;
+      this.showSectionAD = false;
+      this.showSectionGraph = !this.showSectionGraph;
+    },
+    toggleSectionArtDir() {
+      this.showSectionWeb = false;
+      this.showSectionGraph = false;
+      this.showSectionAD = !this.showSectionAD;
+    },
+    myFilterWeb() {
+      this.isActive = !this.isActive
+    },
+     myFilterGraph() {
+      this.isActiveG = !this.isActiveG
+    },
+    myFilterArt() {
+      this.isActiveA = !this.isActiveA
+    }
+    
+  },
 };
 </script>
 
 <!-- STYLE -->
 <style>
 .section_competences {
-  padding: 10% 10% 0 10%;
+  position: relative;
+  padding: 7% 7% 0 7%;
   left: 0px;
   right: 0px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgb(11, 202, 203);
 }
+
+/* box gauche */
+.cerclebleu {
+  width: 115px;
+  height: 115px;;
+  padding: 17px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.cercleBorderWeb {
+  border: 0.5px solid rgb(11, 202, 203);
+}
+.cercleBorderGraph{
+  border: 0.5px solid rgb(11, 202, 203);
+}
+.cercleBorderArt{
+  border: 0.5px solid rgb(11, 202, 203);
+}
+
+
 .box_fields {
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
-/* CARD */
-/* box droite */
 .list_fields {
   margin-bottom: 20px;
   display: flex;
@@ -78,6 +178,7 @@ export default {
 }
 
 .field_nom {
+  margin: 0px;
   text-align: center;
   font-weight: 100;
   font-family: "Roboto";
@@ -89,11 +190,13 @@ export default {
   display: flex;
   flex-direction: column;
 }
-/* box gauche */
+/* box droite */
 .field_block_right {
+  position: absolute;
+  right: 0px;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 50%;
   align-items: center;
   justify-content: space-between;
 }
@@ -108,13 +211,17 @@ export default {
 .field_description {
   width: 100%;
   font-family: "Roboto";
+  font-weight: 100;
   color: white;
   font-size: 14px;
 }
 
 .barre_bleu_verticale {
-  width: 2px;
+  position: absolute;
+  bottom: 0px;
+  right: 100px;
+  width: 1px;
   height: 100px;
-  background: rgb(11,202,203);
+  background: rgb(11, 202, 203);
 }
 </style>

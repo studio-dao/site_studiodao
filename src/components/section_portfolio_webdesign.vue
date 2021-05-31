@@ -52,7 +52,6 @@ export default {
 .main_section{
   left: 0px;
   right: 0px;
-  border-top: 2px solid rgb(11,202,203);
 }
 .section_portfolio{
   position: relative;
