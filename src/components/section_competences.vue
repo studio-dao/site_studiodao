@@ -5,7 +5,8 @@
        
 
           <div class="list_fields" @click="toggleSectionWebdesign(); myFilterWeb()">
-            <div class="cerclebleu" v-bind:class="{ cercleBorderWeb : isActive }">
+            <div class="cerclebleu " v-bind:class="{ cercleBorderWeb : isActive, cercleHalo: hover }" @mouseover="hover = true"
+      @mouseleave="hover = false" >
               <img class="image_fields" :src="fields[0].image_field" alt="field"/>
               <p class="field_nom">{{ fields[0].title }}</p>
             </div>
@@ -13,7 +14,8 @@
 
         
           <div class="list_fields" @click="toggleSectionGraphdesign();myFilterGraph() ">
-            <div class="cerclebleu" v-bind:class="{ cercleBorderGraph : isActiveG }">
+            <div class="cerclebleu" v-bind:class="{ cercleBorderGraph : isActiveG, cercleHalo: hoverG }" @mouseover="hoverG = true"
+      @mouseleave="hoverG = false">
               <img class="image_fields" :src="fields[1].image_field" alt="field"/>
               <p class="field_nom">{{ fields[1].title }}</p>
             </div>
@@ -21,7 +23,8 @@
 
         
           <div class="list_fields" @click="toggleSectionArtDir();myFilterArt() ">
-            <div class="cerclebleu" v-bind:class="{ cercleBorderArt : isActiveA }">
+            <div class="cerclebleu" v-bind:class="{ cercleBorderArt : isActiveA, cercleHalo: hoverA }" @mouseover="hoverA = true"
+      @mouseleave="hoverA = false">
               <img class="image_fields" :src="fields[2].image_field" alt="field" />
               <p class="field_nom">{{ fields[2].title }}</p>
             </div>
@@ -81,7 +84,10 @@ export default {
       showSectionAD: false,
       isActive: false,
       isActiveG: false,
-      isActiveA: false
+      isActiveA: false,
+      hover:false,
+      hoverG:false,
+      hoverA:false
     };
   },
   computed: {
@@ -111,12 +117,18 @@ export default {
       this.showSectionAD = !this.showSectionAD;
     },
     myFilterWeb() {
+      this.isActiveG= false,
+      this.isActiveA= false,
       this.isActive = !this.isActive
     },
-     myFilterGraph() {
+    myFilterGraph() {
+      this.isActive= false,
+      this.isActiveA= false,
       this.isActiveG = !this.isActiveG
     },
     myFilterArt() {
+      this.isActiveG= false,
+      this.isActive= false,
       this.isActiveA = !this.isActiveA
     }
     
@@ -140,12 +152,21 @@ export default {
 /* box gauche */
 .cerclebleu {
   width: 115px;
-  height: 115px;;
+  height: 115px;
   padding: 17px;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
 }
+.cercleHalo{
+    box-shadow: 0 0 9px 1px rgb(11 202 203), 0 0 12px 2px rgb(4 77 77);
+
+    -webkit-animation: .8s linear 0s  animok;
+          animation: .8s linear 0s  animok;
+}
+@-webkit-keyframes animok {from { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 0), 0 0 12px 2px rgba(4, 77, 77, 0); } to { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 1), 0 0 12px 2px rgba(4, 77, 77, .8); } };
+@keyframes animok {from { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 0), 0 0 12px 2px rgba(4, 77, 77, 0); } to { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 1), 0 0 12px 2px rgba(4, 77, 77, .8); } };
+
 .cercleBorderWeb {
   border: 0.5px solid rgb(11, 202, 203);
 }
@@ -155,8 +176,6 @@ export default {
 .cercleBorderArt{
   border: 0.5px solid rgb(11, 202, 203);
 }
-
-
 .box_fields {
   width: 40%;
   display: flex;
