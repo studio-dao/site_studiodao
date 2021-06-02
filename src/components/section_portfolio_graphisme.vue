@@ -8,8 +8,8 @@
         <p class="description_image_slide">{{ currentImg.description }}</p>
       </div>
       <div class="div_fleches">
-      <i class=" fleche_gauche fas fa-caret-left"  @click="prev" ></i>
-      <i class=" fleche_droite fas fa-caret-right" @click="next"></i>
+      <i class=" fleche_gauche fas fa-caret-left"  @click="prevLogo" ></i>
+      <i class=" fleche_droite fas fa-caret-right" @click="nextLogo"></i>
       </div>
     </div>
   </div>
@@ -22,8 +22,8 @@
         <p class="description_image_slide">{{ currentImg1.description }}</p>
       </div>
       <div class="div_fleches">
-      <i class=" fleche_gauche fas fa-caret-left"  @click="prev" ></i>
-      <i class=" fleche_droite fas fa-caret-right" @click="next"></i>
+      <i class=" fleche_gauche fas fa-caret-left"  @click="prevFlyer" ></i>
+      <i class=" fleche_droite fas fa-caret-right" @click="nextFlyer"></i>
       </div>
     </div>
   </div>
@@ -36,8 +36,8 @@
         <p class="description_image_slide">{{ currentImg2.description }}</p>
       </div>
       <div class="div_fleches">
-      <i class=" fleche_gauche fas fa-caret-left"  @click="prev" ></i>
-      <i class=" fleche_droite fas fa-caret-right" @click="next"></i>
+      <i class=" fleche_gauche fas fa-caret-left"  @click="prevMode" ></i>
+      <i class=" fleche_droite fas fa-caret-right" @click="nextMode"></i>
       </div>
     </div>
   </div>
@@ -55,28 +55,44 @@ export default {
   computed: {
     ...mapState(["sliderGraphicdesignLogo","sliderGraphicdesignFlyer", "sliderGraphicdesignMode"]),
       currentImg: function() {
-      return this.sliderGraphicdesignLogo[Math.abs(this.index_slide) % this.sliderGraphicdesignLogo.length];
+      return this.sliderGraphicdesignLogo[Math.abs(this.index_slide_logo) % this.sliderGraphicdesignLogo.length];
     },
       currentImg1: function() {
-      return this.sliderGraphicdesignFlyer[Math.abs(this.index_slide) % this.sliderGraphicdesignFlyer.length];
+      return this.sliderGraphicdesignFlyer[Math.abs(this.index_slide_flyer) % this.sliderGraphicdesignFlyer.length];
     },
       currentImg2: function() {
-      return this.sliderGraphicdesignMode[Math.abs(this.index_slide) % this.sliderGraphicdesignMode.length];
+      return this.sliderGraphicdesignMode[Math.abs(this.index_slide_mode) % this.sliderGraphicdesignMode.length];
     }
   },
 
   data() {
     return {
-      index_slide: 0,
+      index_slide_logo: 0,
+      index_slide_flyer: 0,
+      index_slide_mode: 0,
     };
   },
 
   methods: {
-    next() { 
-      this.index_slide += 1;
+    nextLogo() { 
+      this.index_slide_logo += 1;
     },
-    prev() {
-      this.index_slide -= 1;
+    prevLogo() {
+      this.index_slide_logo -= 1;
+    },
+
+    nextFlyer() { 
+      this.index_slide_flyer += 1;
+    },
+    prevFlyer() {
+      this.index_slide_flyer -= 1;
+    },
+  
+    nextMode() { 
+      this.index_slide_mode += 1;
+    },
+    prevMode() {
+      this.index_slide_mode -= 1;
     },
   }
 };

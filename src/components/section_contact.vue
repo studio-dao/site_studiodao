@@ -27,7 +27,7 @@
         placeholder="Entrez votre message ici..."
       />
       <div class="div_bouton_form">
-      <button class="bouton_bleu">Envoyer</button>
+      <input type="submit" class="bouton_bleu" value="Envoyer"/>
       </div>
     </form>
   </div>

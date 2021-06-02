@@ -57,12 +57,12 @@ width: 15%;
  }
 
  a{
-    text-decoration: none;
-    font-family: 'Roboto';
-    font-weight: 100;
-    color: white;
-    font-size: 14px;
-    margin-right: 10px;
+    text-decoration: none !important;
+    font-family: 'Roboto'!important;
+    font-weight: 100!important;
+    color: white!important;
+    font-size: 14px!important;
+    margin-right: 10px!important;
  }
 
 </style>

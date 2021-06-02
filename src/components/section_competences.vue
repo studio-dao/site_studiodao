@@ -87,7 +87,8 @@ export default {
       isActiveA: false,
       hover:false,
       hoverG:false,
-      hoverA:false
+      hoverA:false,
+      buttonColor:false
     };
   },
   computed: {
@@ -101,22 +102,22 @@ export default {
   },
 
   methods: {
-    toggleSectionWebdesign() {
+     toggleSectionWebdesign() {
       this.showSectionGraph = false;
       this.showSectionAD = false;
       this.showSectionWeb = !this.showSectionWeb;
     },
-    toggleSectionGraphdesign() {
+       toggleSectionGraphdesign() {
       this.showSectionWeb = false;
       this.showSectionAD = false;
       this.showSectionGraph = !this.showSectionGraph;
     },
-    toggleSectionArtDir() {
+      toggleSectionArtDir() {
       this.showSectionWeb = false;
       this.showSectionGraph = false;
       this.showSectionAD = !this.showSectionAD;
     },
-    myFilterWeb() {
+     myFilterWeb() {
       this.isActiveG= false,
       this.isActiveA= false,
       this.isActive = !this.isActive
@@ -131,8 +132,8 @@ export default {
       this.isActive= false,
       this.isActiveA = !this.isActiveA
     }
-    
   },
+
 };
 </script>
 
@@ -161,11 +162,11 @@ export default {
 .cercleHalo{
     box-shadow: 0 0 9px 1px rgb(11 202 203), 0 0 12px 2px rgb(4 77 77);
 
-    -webkit-animation: .8s linear 0s  animok;
-          animation: .8s linear 0s  animok;
+    -webkit-animation: .8s linear 0s  animcercle;
+    animation: .8s linear 0s  animcercle;
 }
-@-webkit-keyframes animok {from { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 0), 0 0 12px 2px rgba(4, 77, 77, 0); } to { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 1), 0 0 12px 2px rgba(4, 77, 77, .8); } };
-@keyframes animok {from { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 0), 0 0 12px 2px rgba(4, 77, 77, 0); } to { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 1), 0 0 12px 2px rgba(4, 77, 77, .8); } };
+@-webkit-keyframes animcercle {from { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 0), 0 0 12px 2px rgba(4, 77, 77, 0); } to { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 1), 0 0 12px 2px rgba(4, 77, 77, .8); } };
+@keyframes animcercle {from { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 0), 0 0 12px 2px rgba(4, 77, 77, 0); } to { box-shadow: 0 0 9px 1px rgba(11, 202, 203, 1), 0 0 12px 2px rgba(4, 77, 77, .8); } };
 
 .cercleBorderWeb {
   border: 0.5px solid rgb(11, 202, 203);

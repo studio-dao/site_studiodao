@@ -2,7 +2,7 @@
   <div class="section_intro">
     <div class="presentation">
       <h1 class="presa_h1">Studio Dao</h1>
-      <p class="presa_txt">bienvenue sur mon site</p>
+      <p class="presa_txt">Devellopeur front-end <br> Ux Ui designer</p>
     </div>
     <img class="portrait" :src="portrait" alt="portrait_jm" />
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="section_CV" id="section_CV">
     <h1 class="titre_CV">Téléchargez mon CV</h1>
-    <button class="bouton_telechargement">Je télécharge</button>
+    <button class="bouton_telechargement" >Je télécharge</button>
   </div>
 </template>
 
@@ -9,6 +9,16 @@
 <script>
 export default {
   name: "section_CV",
+
+  data() {
+    return {
+    }
+  },
+
+    methods: {
+
+    },
+
 };
 </script>
 
@@ -47,5 +57,12 @@ export default {
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
+  transition: all .2s ; 
 }
+
+.bouton_telechargement:hover { 
+  transform: scale(1.2); 
+  }
+
+
 </style>

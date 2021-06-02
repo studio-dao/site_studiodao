@@ -61,7 +61,7 @@ export default {
 .div_fleches{
   position: absolute;;
   padding: 10px;
-  top: 40%;
+  top: 300px;
   width: 100%;
   display: flex;
   flex-direction: row;
