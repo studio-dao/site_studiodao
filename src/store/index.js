@@ -5,36 +5,36 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    logo: require('@/assets/images/images_portrait_et_logo/logo_sdao_v3.png'),
+    logo: require('@/assets/images/images_portrait_et_logo/logo_sdao_v3_fd_noir.png'),
     portrait: require('@/assets/images/images_portrait_et_logo/portrait.png'),
-    portrait_filaire: require('@/assets/images/images_portrait_et_logo/portrait_filaire_et_halo.png'),
+    portrait_filaire: require('@/assets/images/images_portrait_et_logo/portrait_filaire.png'),
     fields: [
       {
           image_field: require('@/assets/images/images_logos_sections/logo_webdesign.png'),
           title: 'Web design (Ux Ui) \r& Intégration',
-          description: 'blablabla'
+          description: 'Fort de mes deux années d’expérience en UX et UI je suis en mesure de proposer des solutions tenant compte des problématiques propres à chaque client. Découvrez ci-dessous quelques un de mes travaux.'
       },
       {
           image_field: require('@/assets/images/images_logos_sections/logo_graphic_design.png'),
           title: 'Graphic design',
-          description: 'okokok'
+          description: 'Je met mes 15 ans d\'expérience professionelle en graphisme au service de votre projet. Créativité, réactivité et respect du cahier des charges. Découvrez ci-dessous une selection de mes réalisations.'
       },
       {
           image_field: require('@/assets/images/images_logos_sections/logo_DA.png'),
           title: 'Direction artistique',
-          description: 'ouioui'
+          description: 'Grâce à mes trois 3 ans d\'experience en direction artistique, j\'organise et supervise des shootings photo pertinents. Du cahier des charges, en passant par le casting des mannequins, jusqu\'à la mise en scène, les décors, et la coordination des équipes sur le shooting. Découvrez ci-dessous une selection de projets dont j\'ai assuré la DA.'
       },
     ],
 
   sliderWebdesign:[
     {
       image:require('@/assets/images/images_webdesign/website_exed.png'),
-      description:'Site \'Executive education program\' de Rennes school of Business.',
+      description:'Site \' Executive education program \' de Rennes school of Business.',
       buttonLink:'https://executive.rennes-sb.com/'
     },
     {
       image:require('@/assets/images/images_webdesign/website_ronan_paitier.png'),
-      description:'Site pro de Ronan Paitier.',
+      description:'Site \' Ronan Paitier services \'.',
       buttonLink:'https://ronanpaitier.wordpress.com/'
     },
     {
@@ -44,7 +44,7 @@ export default new Vuex.Store({
     },
     {
       image:require('@/assets/images/images_webdesign/landing_election_BDE.png'),
-      description:'Landing page election BDE, Rennes School of business.',
+      description:'Landing page election BDE, Rennes School of business (non accessible).',
     },
     {
       image:require('@/assets/images/images_webdesign/website_passionfilmick.png'),
@@ -53,7 +53,7 @@ export default new Vuex.Store({
     },
     {
       image:require('@/assets/images/images_webdesign/website_toolkit.png'),
-      description:'Site Toolkit, Rennes School of Business.',
+      description:'Site Toolkit, Rennes School of Business (non accessible).',
       
     }
   ],
@@ -320,14 +320,10 @@ export default new Vuex.Store({
     },
     {
       categorie: 'Direction artistique',
-      image:require('@/assets/images/images_DA/DA_couple_AH.png'),
+      image:require('@/assets/images/images_DA/DA_leaftlet.png'),
       description:'Direction artistique du shooting lookbook hiver réalisé pour la marque Bonobo',
     },
-    {
-      categorie: 'Direction artistique',
-      image:require('@/assets/images/images_DA/DA_leaftlet.png'),
-      description:'Direction artistique du shooting pour le lancement de la collection hiver réalisé pour la marque Bonobo',
-    },
+ 
     {
       categorie: 'Direction artistique',
       image:require('@/assets/images/images_DA/DA_noel.png'),

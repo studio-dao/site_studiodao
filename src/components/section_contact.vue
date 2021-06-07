@@ -1,9 +1,15 @@
 <template>
   <div class="section_contact" id="section_contact">
     <div class="chapeau_section_contact">
-      <img class="portrait_filaire" :src="portrait_filaire" alt="" />
-      <h1 class="form_title">Me contacter</h1>
+      <div class="rectangle_lumineux"></div>
+      <img class="portrait_filaire" :src="portrait_filaire" alt="portrait dessiné"/>
+      <div class="box_droite_contact">
+        <h1 class="form_title">Me contacter :</h1>
+        <a class="mailto" href="mailto:jean.emmanuel.dao@gmail.com"><button class="bouton_bleu bouton_mail">Ecrire à Studio Dao</button></a>
+      </div>
     </div>
+
+    <!-- formulaire 
     <form class="formulaire_contact" action="post">
       <label for="input_nom">Nom</label>
       <input
@@ -30,6 +36,7 @@
       <input type="submit" class="bouton_bleu" value="Envoyer"/>
       </div>
     </form>
+    -->
   </div>
 </template>
 
@@ -46,6 +53,9 @@ export default {
 
 <!-- STYLE -->
 <style>
+/* DESKTOP */
+@media only screen and (min-device-width: 568px) and (max-device-width: 2560px) and (-webkit-min-device-pixel-ratio: 2) {
+
 .section_contact {
   left: 0px;
   right: 0px;
@@ -55,32 +65,165 @@ export default {
   justify-content: space-between;
 }
 .chapeau_section_contact {
+  position: relative;
   display: flex;
   margin-bottom: 20px;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   text-align: left;
 }
+.rectangle_lumineux{
+  position:absolute;
+  z-index: 1;
+  top: 10px;
+  left: 420px;
+  width: 200px;
+  height: 230px;
+  border:none;
+  animation: 1.5s linear 0s  infinite alternate animrect;
+}
+@keyframes animrect {from { box-shadow: 0 0 1px .2px rgba(11, 202, 203, .1), 0 0 2px .2px rgba(4, 77, 77, .1),inset 0 0 1px .2px rgba(11, 202, 203, .1), inset 0 0 2px .2px rgba(4, 77, 77, .1); }  to { box-shadow: 0 0 3px .2px rgba(11, 202, 203, 1), 0 0 3px .3px rgba(4, 77, 77, .8),inset 0 0 3px .2px rgba(11, 202, 203, 1), inset 0 0 3px .3px rgba(4, 77, 77, .8); } };
+
 
 .portrait_filaire {
-  width: 130px;
-  height: 150px;
+  z-index: 2;
+  width: 330px;
+  height: auto;
 }
 
-.formulaire_contact {
-  display: flex;
-  flex-direction: column;
+/* BOX DROITE */
+
+.box_droite_contact{
+    height: 300px;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .form_title {
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 10px 0px;
   color: white;
   font-family: "Roboto condensed";
   font-size: 30px;
 }
 
-input {
+.bouton_mail {
+  width: 100%;
+}
 
+.mailto {
+  width: 100%;
+  text-align: center;
+}
+
+/* FORM */
+.formulaire_contact {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  background: rgb(68, 65, 61);
+  padding: 5px;
+  margin-bottom: 10px;
+  outline: none;
+  border-style: none;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: 100;
+  overflow: scroll;
+}
+
+label {
+  margin-bottom: 5px;
+  font-family: "Roboto";
+  font-weight: 100;
+  color: white;
+  font-size: 14px;
+}
+
+.div_bouton_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.textarea {
+  height: 150px;
+}
+}
+
+/* MOBILE */
+@media only screen and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)  {
+  
+.section_contact {
+  left: 0px;
+  right: 0px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chapeau_section_contact {
+  position: relative;
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+.rectangle_lumineux{
+  position:absolute;
+  z-index: 1;
+  left:10px;
+  width:80px;
+  height: 100px;
+  border:none;
+  animation: 1.5s linear 0s  infinite alternate animrect;
+}
+@keyframes animrect {from { box-shadow: 0 0 1px .2px rgba(11, 202, 203, .1), 0 0 2px .2px rgba(4, 77, 77, .1),inset 0 0 1px .2px rgba(11, 202, 203, .1), inset 0 0 2px .2px rgba(4, 77, 77, .1); }  to { box-shadow: 0 0 3px .2px rgba(11, 202, 203, 1), 0 0 3px .3px rgba(4, 77, 77, .8),inset 0 0 3px .2px rgba(11, 202, 203, 1), inset 0 0 3px .3px rgba(4, 77, 77, .8); } };
+
+
+.portrait_filaire {
+  z-index: 2;
+  width: 130px;
+  height: 150px;
+}
+
+/* BOX DROITE */
+
+.box_droite_contact{
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.form_title {
+  margin: 0px 0px 10px 0px;
+  color: white;
+  font-family: "Roboto condensed";
+  font-size: 30px;
+}
+
+.bouton_mail {
+  width: 100%;
+}
+
+.mailto {
+  width: 100%;
+  text-align: center;
+}
+
+/* FORM */
+.formulaire_contact {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
   background: rgb(68, 65, 61);
   padding: 5px;
   margin-bottom: 10px;
@@ -102,26 +245,15 @@ label {
 }
 
 
-.bouton_bleu {
-  border-radius: 8px;
-  background: rgb(11, 202, 203);
-  font-family: "Roboto condensed";
-  color: white;
-  border: none;
-  padding: 5px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-}
-.div_bouton_form{
+
+.div_bouton_form {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-.textarea{
+.textarea {
   height: 150px;
 }
-
+}
 </style>

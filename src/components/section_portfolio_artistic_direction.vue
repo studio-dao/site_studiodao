@@ -3,7 +3,7 @@
   <div class="section_portfolio">
       <div class="slider_web" >
       <img class="slide_image" :src="currentImg3.image" alt="image" />
-      <div class="description_slider_graph">
+      <div class="description_slider_da">
         <p class="description_image_slide categorie">Catégorie: <span class="category_name">{{currentImg3.categorie}}</span></p>
         <p class="description_image_slide">{{ currentImg3.description }}</p>
       </div>
@@ -50,4 +50,22 @@ export default {
 
 <!-- STYLE -->
 <style>
+/* DESKTOP */
+@media only screen and (min-device-width: 568px) and (max-device-width: 2560px) and (-webkit-min-device-pixel-ratio: 2) {
+.description_slider_da{
+ padding-left: 430px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+}
+/* MOBILE */
+@media only screen and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)  {
+.description_slider_da{
+  padding-left: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+}
 </style>

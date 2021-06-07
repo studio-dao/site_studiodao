@@ -2,7 +2,7 @@
 <section class="main_section">
   <div class="section_portfolio">
       <div class="slider_web" >
-      <img class="slide_image" :src="currentImg.image" alt="image" />
+      <img class="slide_image_graph" :src="currentImg.image" alt="image" />
       <div class="description_slider_graph">
         <p class="description_image_slide categorie">Catégorie: <span class="category_name">{{currentImg.categorie}}</span></p>
         <p class="description_image_slide">{{ currentImg.description }}</p>
@@ -16,7 +16,7 @@
   <!-- flyer -->
     <div class="section_portfolio">
       <div class="slider_web" >
-      <img class="slide_image" :src="currentImg1.image" alt="image" />
+      <img class="slide_image_graph" :src="currentImg1.image" alt="image" />
       <div class="description_slider_graph">
         <p class="description_image_slide categorie">Catégorie: <span class="category_name">{{currentImg1.categorie}}</span></p>
         <p class="description_image_slide">{{ currentImg1.description }}</p>
@@ -30,7 +30,7 @@
   <!-- mode -->
     <div class="section_portfolio">
       <div class="slider_web" >
-      <img class="slide_image" :src="currentImg2.image" alt="image" />
+      <img class="slide_image_graph" :src="currentImg2.image" alt="image" />
       <div class="description_slider_graph">
         <p class="description_image_slide categorie">Catégorie: <span class="category_name">{{currentImg2.categorie}}</span></p>
         <p class="description_image_slide">{{ currentImg2.description }}</p>
@@ -100,9 +100,16 @@ export default {
 
 <!-- STYLE -->
 <style>
+/* DESKTOP */
+@media only screen and (min-device-width: 568px) and (max-device-width: 2560px) and (-webkit-min-device-pixel-ratio: 2) {
+
+.slide_image_graph{
+  margin: 20px 0px;
+  width: 30%;
+}
 
 .description_slider_graph {
-  padding-left: 45px;
+  padding-left: 485px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -119,5 +126,32 @@ export default {
     font-size: 12px;
     font-weight: 300;
 }
+}
 
+
+/* MOBILE */
+@media only screen and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)  {
+.slide_image_graph{
+  margin: 20px 0px;
+  width: 60%;
+}
+.description_slider_graph {
+  padding-left: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.description_image_slide{
+  width:80%;
+}
+
+.categorie{
+  margin-bottom: 5px;
+}
+
+.category_name{
+    font-size: 12px;
+    font-weight: 300;
+}
+}
 </style>
